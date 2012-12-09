@@ -31,3 +31,6 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+# dairg add start
+/doc/*
+# dairg add end

@@ -1,0 +1,2 @@
+module Jsdemos::FullcalendarsHelper
+end

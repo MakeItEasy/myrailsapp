@@ -1,4 +1,12 @@
 Myrailsapp::Application.routes.draw do
+
+  resources :tasks
+
+  # 这里是自己js方面的一些例子
+  namespace :jsdemos do
+    get "fullcalendars/index"
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

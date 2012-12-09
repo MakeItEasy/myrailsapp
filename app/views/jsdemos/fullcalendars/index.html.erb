@@ -1,0 +1,38 @@
+<script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker({
+      autoSize: true,
+      onSelect: function(dateText, inst){
+          // 选择日期的事件
+          var selectDate = $( "#datepicker" ).datepicker( "getDate" );
+          // 让日历转到选择的日期
+          $('#calendar').fullCalendar('gotoDate', selectDate);
+        }
+    });
+
+    $('#calendar').fullCalendar({
+//      header: {
+//        left: 'prev,next today',
+//        center: 'title',
+//        right: 'agendaDay'
+//      },
+      header: false,
+      defaultView: 'agendaDay',
+      minTime: 8,
+      maxTime: 19,
+      // height: 550,
+      // width: 200,
+      contentHeight: 550
+      // contentWidth: 200
+    })
+  });
+</script>
+<div class="maintasks">
+  <div id="datepicker" style="float:left;">
+  </div>
+  <div id='calendar' style="padding-left:20px; width:25%; float:left;">
+  </div>
+  <div id="dataform" style="float:left; padding-left:20px;">
+    here is the  fomr
+  </div>
+</div>
