@@ -1,3 +1,37 @@
 // Place all the styles related to the jsdemos/fullcalendars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.groups {
+  position: relative;
+  div.row {
+    width: 100%;
+    div.left {
+      width: 10%;
+      left: 0;
+      position: absolute;
+      float: left;
+    }     
+    div.cal{
+      width: 90%;
+      left: 10%;
+      position: absolute;
+    }
+  }
+}
+
+table.groups {
+  width: 100%;
+  border-collapse: collapse;
+  div.cal {
+    width: 100%;
+  }
+  td {
+    padding: 0;
+  }
+  td.left {
+    width: 10%;
+  }
+  td.cal {
+    width: 90%;
+  }
+}

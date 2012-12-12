@@ -1,0 +1,59 @@
+<script>
+  $(document).ready(function() {
+
+    $('#calendar1').fullCalendar({
+//      header: {
+//        left: 'prev,next today',
+//        center: 'title',
+//        right: 'agendaDay'
+//      },
+      header: false,
+      defaultView: 'basicWeek',
+      contentHeight: 100
+    })
+    $('#calendar2').fullCalendar({
+//      header: {
+//        left: 'prev,next today',
+//        center: 'title',
+//        right: 'agendaDay'
+//      },
+      header: false,
+      defaultView: 'basicWeek',
+      contentHeight: 100
+    })
+
+
+  });
+</script>
+<!--
+<div class="groups">
+    <div class="row">
+      <div class="left">user1</div>
+      <div class="cal">
+        <div id='calendar1'></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="left">user2</div>
+      <div class="cal">
+        <div id='calendar2'></div>
+      </div>
+    </div>
+</div>
+-->
+<table class="groups" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="left">user1</td>
+      <td class="cal">
+        <div id='calendar1' class="cal"></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">user2</td>
+      <td class="cal">
+        <div id='calendar2' class="cal"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -5,6 +5,7 @@ Myrailsapp::Application.routes.draw do
   # 这里是自己js方面的一些例子
   namespace :jsdemos do
     get "fullcalendars/index"
+    get "fullcalendars/people_left_cal"
   end
 
   # The priority is based upon order of creation:
