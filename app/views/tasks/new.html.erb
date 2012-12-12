@@ -42,7 +42,28 @@
       // width: 200,
       contentHeight: 550
       // contentWidth: 200
-    })
+    });
+
+
+
+  alert("2222helo");
+$("#myform").bind("ajax:ajaxSuccess", function(event, data, status, xhr) {
+  alert("helo");
+      $("#error_div").html(data);
+    });
+$("#myform").bind("success", function(event, data, status, xhr) {
+  alert("helo");
+    });
+
+$(document).on('ajax:success', '#myform', function(e) {
+  alert("helo333");
+});
+    
+  alert("after");
+
+
+
+
   });
 </script>
 <div class="maintasks">

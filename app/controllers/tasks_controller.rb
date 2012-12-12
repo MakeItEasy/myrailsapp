@@ -1,3 +1,6 @@
+# coding: utf-8
+#
+require 'active_support/builder' 
 class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
@@ -50,6 +53,17 @@ class TasksController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.js {
+            xm = Builder::XmlMarkup
+            xm.ul {
+              @task.errors.full_messages.each do |msg| 
+                  xm.li {
+                    xm << msg
+                  }
+              end
+            }
+            render(:text=>xm)
+          }
       end
     end
   end
