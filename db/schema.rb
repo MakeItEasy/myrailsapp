@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20121209144619) do
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
+    t.date     "task_date"
     t.datetime "start_time"
     t.datetime "end_time"
     t.text     "memo"

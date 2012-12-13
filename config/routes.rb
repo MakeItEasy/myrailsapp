@@ -1,6 +1,10 @@
 Myrailsapp::Application.routes.draw do
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      get :get_tasks
+    end
+  end
 
   # 这里是自己js方面的一些例子
   namespace :jsdemos do

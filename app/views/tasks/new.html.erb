@@ -7,23 +7,29 @@
           var selectDate = $( "#datepicker" ).datepicker( "getDate" );
           // 让日历转到选择的日期
           $('#calendar').fullCalendar('gotoDate', selectDate);
-          $('#calendar').fullCalendar('gotoDate', selectDate);
-          var eventSources= [
-                  // your event source
-                  {
-                      events: [ // put the array in the `events` property
-                          {
-                              title  : 'event3',
-                              start  : '2012-12-11 12:30:00',
-                              end		:'2012-12-11 14:30:00'
-                          }
-                      ],
-                      color: 'black',     // an option!
-                      textColor: 'yellow' // an option!
-                  }
-              ];
-          alert(eventSources);
-          $('#calendar').fullCalendar( 'addEventSource', eventSources );
+          var eventSource = [{
+              url: '/tasks/get_tasks',
+              color: 'red',
+              textColor: 'black',
+              ignoreTimezone: true,
+              // data: {select_date: $.fullCalendar.formatDate( selectDate, "yyyy-MM-dd")  }
+              data: {select_date: "2012-10-02"  }
+          }];
+          // alert($.fullCalendar.formatDate( selectDate, "yyyy-MM-dd") );
+          // alert(eventSource[0].data);
+          // alert(eventSource[0].data.select_date);
+          // $('#calendar').fullCalendar( 'addEventSource', eventSource );
+          $('#calendar').fullCalendar( 'addEventSource', [{
+              url: '/tasks/get_tasks',
+              color: 'red',
+              textColor: 'black',
+              ignoreTimezone: true,
+              // data: {select_date: $.fullCalendar.formatDate( selectDate, "yyyy-MM-dd")  }
+              data: {select_date: "2012-10-02"  }
+          }]
+ );
+          alert("helo");
+          $('#calendar').fullCalendar( 'refetchEvents' );
           
         }
     });
@@ -36,8 +42,20 @@
 //      },
       header: false,
       defaultView: 'agendaDay',
-      minTime: 8,
-      maxTime: 19,
+//      minTime: 8,
+//      maxTime: 19,
+      // events: '/tasks/get_tasks',
+      eventSources: [{
+            url: '/tasks/get_tasks',
+            color: 'red',
+            textColor: 'black',
+            ignoreTimezone: true,
+            lazyFetching: false,
+            // data: {select_date: $.fullCalendar.formatDate( $( "#datepicker" ).datepicker( "getDate" ), "yyyy-MM-dd")  }
+            data: {select_date: "2012-10-01"  }
+        }],
+      
+      
       // height: 550,
       // width: 200,
       contentHeight: 550
@@ -46,20 +64,15 @@
 
 
 
-  alert("2222helo");
 $("#myform").bind("ajax:ajaxSuccess", function(event, data, status, xhr) {
-  alert("helo");
       $("#error_div").html(data);
     });
 $("#myform").bind("success", function(event, data, status, xhr) {
-  alert("helo");
     });
 
 $(document).on('ajax:success', '#myform', function(e) {
-  alert("helo333");
 });
     
-  alert("after");
 
 
 
@@ -67,13 +80,19 @@ $(document).on('ajax:success', '#myform', function(e) {
   });
 </script>
 <div class="maintasks">
-  <div id="datepicker" style="float:left;">
+  <div id="left">
+    <div id="datepicker" style="float:left;">
+    </div>
   </div>
-  <div id='calendar' style="padding-left:20px; width:25%; float:left;">
+  <div id="center">
+    <div id='calendar' style="padding-left:20px; width:25%; float:left;">
+    </div>
   </div>
-  <div id="dataform" style="float:left; padding-left:20px;">
-    <%= render 'form' %>
-    <%= link_to 'Back', tasks_path %>
+  <div id="right">
+    <div id="dataform" style="float:left; padding-left:20px;">
+      <%= render 'form' %>
+      <%= link_to 'Back', tasks_path %>
+    </div>
   </div>
 </div>
 
