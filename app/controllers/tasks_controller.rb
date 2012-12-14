@@ -98,12 +98,7 @@ class TasksController < ApplicationController
   
 
   def get_tasks
-    # @tasks = Task.find(:all, :conditions => ["starttime >= '#{Time.at(params['start'].to_i).to_formatted_s(:db)}' and endtime <= '#{Time.at(params['end'].to_i).to_formatted_s(:db)}'"] )
-    puts params["select_date"].to_s
-    @tasks = Task.where("task_date = ?", params[:select_date] || Date.today)
-    puts "++++++++++++++++++++++++++++++++++++++"
-    puts params[:select_date].to_s
-    puts params.to_s
+    @tasks = Task.find(:all, :conditions => ["start_time >= '#{Time.at(params['start'].to_i).to_formatted_s(:db)}' and end_time <= '#{Time.at(params['end'].to_i).to_formatted_s(:db)}'"] )
     tasks = [] 
     @tasks.each do |task|
       tasks << {:id => task.id, :title => task.name, :description => task.memo || "Some cool description here...", :start => "#{task.start_time.iso8601}", :end => "#{task.end_time.iso8601}", :allDay => false, :recurring => false}

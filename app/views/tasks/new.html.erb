@@ -7,75 +7,24 @@
           var selectDate = $( "#datepicker" ).datepicker( "getDate" );
           // 让日历转到选择的日期
           $('#calendar').fullCalendar('gotoDate', selectDate);
-          var eventSource = [{
-              url: '/tasks/get_tasks',
-              color: 'red',
-              textColor: 'black',
-              ignoreTimezone: true,
-              // data: {select_date: $.fullCalendar.formatDate( selectDate, "yyyy-MM-dd")  }
-              data: {select_date: "2012-10-02"  }
-          }];
-          // alert($.fullCalendar.formatDate( selectDate, "yyyy-MM-dd") );
-          // alert(eventSource[0].data);
-          // alert(eventSource[0].data.select_date);
-          // $('#calendar').fullCalendar( 'addEventSource', eventSource );
-          $('#calendar').fullCalendar( 'addEventSource', [{
-              url: '/tasks/get_tasks',
-              color: 'red',
-              textColor: 'black',
-              ignoreTimezone: true,
-              // data: {select_date: $.fullCalendar.formatDate( selectDate, "yyyy-MM-dd")  }
-              data: {select_date: "2012-10-02"  }
-          }]
- );
-          alert("helo");
-          $('#calendar').fullCalendar( 'refetchEvents' );
-          
         }
     });
 
     $('#calendar').fullCalendar({
-//      header: {
-//        left: 'prev,next today',
-//        center: 'title',
-//        right: 'agendaDay'
-//      },
       header: false,
       defaultView: 'agendaDay',
-//      minTime: 8,
-//      maxTime: 19,
+      // minTime: 8,
+      // maxTime: 19,
       // events: '/tasks/get_tasks',
       eventSources: [{
-            url: '/tasks/get_tasks',
-            color: 'red',
-            textColor: 'black',
-            ignoreTimezone: true,
-            lazyFetching: false,
-            // data: {select_date: $.fullCalendar.formatDate( $( "#datepicker" ).datepicker( "getDate" ), "yyyy-MM-dd")  }
-            data: {select_date: "2012-10-01"  }
+          url: '/tasks/get_tasks',
+          color: 'red',
+          textColor: 'black',
+          ignoreTimezone: true,
+          lazyFetching: false
         }],
-      
-      
-      // height: 550,
-      // width: 200,
       contentHeight: 550
-      // contentWidth: 200
     });
-
-
-
-$("#myform").bind("ajax:ajaxSuccess", function(event, data, status, xhr) {
-      $("#error_div").html(data);
-    });
-$("#myform").bind("success", function(event, data, status, xhr) {
-    });
-
-$(document).on('ajax:success', '#myform', function(e) {
-});
-    
-
-
-
 
   });
 </script>
