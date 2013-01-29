@@ -1,0 +1,25 @@
+<h1>I18n::Locales#index</h1>
+
+<ul>
+  <li><%= link_to '中文', i18n_locales_index_path(locale: 'zh-cn' ) %></li>
+  <li><%= link_to '日文', i18n_locales_index_path(:locale => :jp) %></li>
+  <li><%= link_to '英文', i18n_locales_index_path(:locale => :en) %></li>
+</ul>
+
+<h1>
+  <%= t(:hello) %>
+</h1>
+
+<br />
+<br />
+<hr />
+
+<h1>Key Point</h1>
+<ul>
+  <li>
+  routes.rb里面定义scope，例: scope "(:locale)", :locale => /en|zh-cn|jp/ do
+  </li>
+  <li>
+  在controller中添加过滤器，before_filter :set_locale 
+  </li>
+</ul>

@@ -1,5 +1,6 @@
 Myrailsapp::Application.routes.draw do
 
+
   resources :tasks do
     collection do
       get :get_tasks
@@ -12,6 +13,11 @@ Myrailsapp::Application.routes.draw do
     get "fullcalendars/people_left_cal"
   end
 
+  scope "(:locale)", :locale => /en|zh-cn|jp/ do
+    namespace :i18n do
+      get "locales/index"
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -61,7 +67,7 @@ Myrailsapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
