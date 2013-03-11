@@ -14,13 +14,15 @@
  */
 
 #header {
-  background-color: green;
-  height: 40px;
+  background-color: pink;
+  height: 30px;
   margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 #header h3 {
-  padding-top:10px;
+  float: left;
 }
 
 #contents {
@@ -34,4 +36,8 @@
 
 #footer h3 {
   padding-top: 8px;
+}
+
+#header div.nav {
+  float: right;
 }

@@ -9,6 +9,13 @@
 <body>
   <div id='header' align='center' valign="middle">
     <h3>Here is the header</h3>
+    <div class='nav'>
+      <ul>
+        <li>
+          <%= link_to '主页', root_path %>
+        </li>
+      </ul>
+    </div>
   </div>
   <div id="contents">
     <%= yield %>
