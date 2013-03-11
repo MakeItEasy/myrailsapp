@@ -1,6 +1,8 @@
 Myrailsapp::Application.routes.draw do
 
 
+  resources :posts
+
   resources :tasks do
     collection do
       get :get_tasks
