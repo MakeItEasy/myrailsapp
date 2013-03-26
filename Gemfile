@@ -39,4 +39,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # dairg added start
+gem 'devise'
+
 # dairg added end
