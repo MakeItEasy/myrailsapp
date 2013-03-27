@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myrailsapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id='header' align='center' valign="middle">
+    <h3>Here is the personal user page </h3>
+    <div class='nav'>
+      <ul>
+        <li>
+          <%= link_to '主页', root_path %>
+        </li>
+      </ul>
+      sign in as <%= current_user.email%>
+      <%= link_to "logout out", destroy_user_session_path, {method: :DELETE} %>
+    </div>
+  </div>
+  <div id="contents">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
+</body>
+</html>

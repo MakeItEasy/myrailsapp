@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myrailsapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id='header' align='center' valign="middle">
+    <h3>Here is the admin page </h3>
+    <div class='nav'>
+      <ul>
+        <% if admin_signed_in? %>
+          <li>
+            <%= link_to '主页', root_path %>
+          </li>
+        <% end %>
+      </ul>
+      <% if admin_signed_in? %>
+        sign in as <%= current_admin.email%>
+        <%= link_to "logout out", destroy_admin_session_path, {method: :DELETE} %>
+      <% else %>
+        <%= link_to "login", new_admin_session_path %>
+      <% end %>
+    </div>
+  </div>
+  <div id="contents">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
+</body>
+</html>

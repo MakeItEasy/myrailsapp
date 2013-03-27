@@ -1,5 +1,19 @@
 Myrailsapp::Application.routes.draw do
 
+  devise_for :users, :path => 'auth', :path_names => { :sign_in => 'login'}
+
+  devise_for :admins, :path => 'admin/auth', :path_names => { :sign_in => 'login'}
+
+  # 管理员相关机能
+  namespace :admin do
+    get "dashboard/index"
+  end
+
+  # 普通用户相关机能
+  namespace :user do
+    get "dashboard/index"
+
+  end
 
   resources :posts
 
