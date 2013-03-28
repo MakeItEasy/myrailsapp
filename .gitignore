@@ -34,3 +34,4 @@ pickle-email-*.html
 # dairg add start
 /doc/*
 # dairg add end
+**.swp

@@ -30,7 +30,7 @@ class Post < ActiveRecord::Base
   # 所有帖子
   #
   # === Examples
-  #   Post.new({id: 1}).get_post_by
+  #   Post.new({id: 1}).get_post_by # => results[]
   def get_post_by(id, name)
   end
 end
