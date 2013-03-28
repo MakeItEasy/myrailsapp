@@ -1,3 +1,3 @@
 class WanerbuDeviseParentController < ApplicationController
-  layout 'admin_base'
+  layout false
 end

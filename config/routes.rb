@@ -29,7 +29,7 @@ Myrailsapp::Application.routes.draw do
     get "fullcalendars/people_left_cal"
   end
 
-  scope "(:locale)", :locale => /en|zh-cn|jp/ do
+  scope "(:locale)", :locale => /en|zh-CN|jp/ do
     namespace :i18n do
       get "locales/index"
     end
