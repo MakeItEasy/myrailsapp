@@ -9,9 +9,4 @@ class PostTest < ActiveSupport::TestCase
     post = Post.new
     assert !post.save, "saving the post without a title"
   end
-
-  test "should report error" do
-    some_undefined_variable
-    assert true
-  end
 end
