@@ -2,6 +2,11 @@
 #
 require 'active_support/builder' 
 class TasksController < ApplicationController
+=begin
+  helper TasksHelper
+  helper WelcomeHelper
+  helper CommonHelper
+=end
   # GET /tasks
   # GET /tasks.json
   def index

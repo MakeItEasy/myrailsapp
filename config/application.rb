@@ -57,6 +57,10 @@ module Myrailsapp
     # Enable the asset pipeline
     config.assets.enabled = true
 
+
+    # 默认不加载所有helper
+    config.action_controller.include_all_helpers = false
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
