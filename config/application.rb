@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'rack/ssl'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -11,6 +12,11 @@ end
 
 module Myrailsapp
   class Application < Rails::Application
+
+    #config.force_ssl = true
+
+    config.middleware.insert_before ActionDispatch::Static, Rack::SSL, :exclude => proc { |env| env['HTTPS'] != 'on' }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -71,6 +77,5 @@ module Myrailsapp
       :authentication       => 'plain',
       :enable_starttls_auto => true
     }
-
   end
 end

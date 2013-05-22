@@ -41,4 +41,7 @@ gem 'jquery-rails'
 # dairg added start
 gem 'devise'
 
+group :development do
+  gem 'thin'
+end
 # dairg added end
