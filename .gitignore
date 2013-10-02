@@ -23,6 +23,7 @@ capybara-*.html
 /.bundle
 /vendor/bundle
 /log/*
+/.c9revisions/*
 /tmp/*
 /db/*.sqlite3
 /public/system/*
