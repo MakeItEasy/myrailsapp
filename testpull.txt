@@ -1,5 +1,5 @@
 test pull request 2.
 
-modified by makeiteasy.
+modified by makeiteasy 2.
 
 modified by wenny 1, 2.
