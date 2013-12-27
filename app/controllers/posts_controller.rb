@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+=begin
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
     end
+=end
   end
 
   # GET /posts/1
